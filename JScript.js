@@ -1,17 +1,10 @@
 let noClicks = 0;
+let buttonText = ["STOP", "READY", "GO"];
+let buttonClass = ["btn btn-danger", "btn btn-warning", "btn btn-success"];
 
 function changeColor() {
-    ++noClicks;
-    if (noClicks === 1) {
-        document.getElementById("buttonColor").innerHTML = "READY";
-        document.getElementById("buttonColor").className = "btn btn-warning";
-    } else if (noClicks === 2) {
-        document.getElementById("buttonColor").innerHTML = "GO";
-        document.getElementById("buttonColor").className = "btn btn-success";
-    } else {
-        document.getElementById("buttonColor").innerHTML = "STOP";
-        document.getElementById("buttonColor").className = "btn btn-danger";
-        noClicks = 0;
-    }
+    noClicks = (noClicks + 1) % buttonText.length;
+    document.getElementById("buttonColor").innerHTML = buttonText[noClicks];
+    document.getElementById("buttonColor").className = buttonClass[noClicks];
 }
 setInterval(changeColor, 10000);
