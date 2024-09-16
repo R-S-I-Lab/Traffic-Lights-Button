@@ -1,5 +1,5 @@
 let noClicks = 0;
-const seconds = 10000;
+const interval = 10000;
 const buttonText = ["STOP", "READY", "GO"];
 const buttonClass = ["btn btn-danger", "btn btn-warning", "btn btn-success"];
 
@@ -9,4 +9,4 @@ function changeColor() {
     document.getElementById("buttonColor").className = buttonClass[noClicks];
 }
 
-setInterval(changeColor, seconds);
+setInterval(changeColor, interval);
